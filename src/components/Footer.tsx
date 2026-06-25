@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Instagram, Mail, Zap } from "lucide-react";
+import { Mail, Zap } from "lucide-react";
+import { LinkedInIcon, InstagramIcon } from "./BrandIcons";
 
 const socials = [
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://instagram.com", label: "Instagram", Icon: Instagram },
+  { href: "https://linkedin.com", label: "LinkedIn", Icon: LinkedInIcon },
+  { href: "https://instagram.com", label: "Instagram", Icon: InstagramIcon },
   { href: "mailto:hello@thunspark.com", label: "Email", Icon: Mail },
 ];
 
