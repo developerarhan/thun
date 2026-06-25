@@ -91,8 +91,8 @@ function Contact() {
                 <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Follow</div>
                 <div className="mt-4 flex gap-3">
                   {[
-                    { href: "https://linkedin.com", Icon: Linkedin, label: "LinkedIn" },
-                    { href: "https://instagram.com", Icon: Instagram, label: "Instagram" },
+                    { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
+                    { href: "https://instagram.com", Icon: InstagramIcon, label: "Instagram" },
                     { href: "mailto:hello@thunspark.com", Icon: Mail, label: "Email" },
                   ].map(({ href, Icon, label }) => (
                     <a
