@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoAsset from "../assets/thunspark-logo.png.asset.json";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -30,10 +31,12 @@ export function Navbar() {
       }`}
     >
       <nav className="container-page flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-transform group-hover:rotate-12">
-            <Zap className="h-5 w-5" strokeWidth={2.5} />
-          </span>
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <img
+            src={logoAsset.url}
+            alt="ThunSpark"
+            className="h-9 w-9 object-contain transition-transform group-hover:scale-110"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">ThunSpark</span>
         </Link>
 
