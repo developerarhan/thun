@@ -121,7 +121,7 @@ export function HeroIllustration() {
         </defs>
 
         {/* Faint orbit ring */}
-        <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(223,207,109,0.08)" strokeWidth="1" strokeDasharray="2 6" />
+        <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(223,207,109,0.05)" strokeWidth="1" strokeDasharray="2 6" />
         <circle cx={center} cy={center} r={radius - 60} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
 
         {/* Center chip glow */}
