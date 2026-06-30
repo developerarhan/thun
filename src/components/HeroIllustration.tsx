@@ -11,7 +11,7 @@ const GOLD = "#DFCF6D";
 
 type Module = {
   label: string;
-  icon: (props: { className?: string }) => JSX.Element;
+  icon: (props: { className?: string }) => ReactElement;
 };
 
 const Icon = {
