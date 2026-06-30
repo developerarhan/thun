@@ -1,136 +1,255 @@
 import { motion } from "framer-motion";
 
+/**
+ * Premium enterprise AI automation illustration.
+ * Central glowing AI chip with 8 orbiting capability modules,
+ * connected via thin gold lines. Subtle floating + pulse animations.
+ */
+
+const GOLD = "#DFCF6D";
+
+type Module = {
+  label: string;
+  icon: (props: { className?: string }) => JSX.Element;
+};
+
+const Icon = {
+  Recruitment: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="8" r="3.2" />
+      <path d="M5 20c1.2-3.4 4-5 7-5s5.8 1.6 7 5" />
+    </svg>
+  ),
+  Sales: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 17l5-5 3 3 7-8" />
+      <path d="M14 7h5v5" />
+    </svg>
+  ),
+  Support: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 12a8 8 0 1 1 16 0v4a3 3 0 0 1-3 3h-1v-6h4M4 13h4v6H7a3 3 0 0 1-3-3z" />
+    </svg>
+  ),
+  Workflow: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="3" width="6" height="6" rx="1" />
+      <rect x="15" y="15" width="6" height="6" rx="1" />
+      <path d="M9 6h6a3 3 0 0 1 3 3v6" />
+    </svg>
+  ),
+  CRM: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="9" cy="9" r="3" />
+      <circle cx="17" cy="15" r="2.5" />
+      <path d="M3 20c1-3 3.5-4.5 6-4.5M13 20c.4-1.8 1.8-3 3.8-3" />
+    </svg>
+  ),
+  Data: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <ellipse cx="12" cy="6" rx="7" ry="2.5" />
+      <path d="M5 6v12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5" />
+    </svg>
+  ),
+  Email: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </svg>
+  ),
+  Analytics: ({ className = "" }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" />
+    </svg>
+  ),
+};
+
+const modules: Module[] = [
+  { label: "Recruitment", icon: Icon.Recruitment },
+  { label: "Sales", icon: Icon.Sales },
+  { label: "Support", icon: Icon.Support },
+  { label: "Workflow", icon: Icon.Workflow },
+  { label: "CRM", icon: Icon.CRM },
+  { label: "Data", icon: Icon.Data },
+  { label: "Email", icon: Icon.Email },
+  { label: "Analytics", icon: Icon.Analytics },
+];
+
 export function HeroIllustration() {
+  const size = 600;
+  const center = size / 2;
+  const radius = 230;
+
+  const positions = modules.map((m, i) => {
+    const angle = (i / modules.length) * Math.PI * 2 - Math.PI / 2;
+    return {
+      ...m,
+      x: center + Math.cos(angle) * radius,
+      y: center + Math.sin(angle) * radius,
+    };
+  });
+
   return (
     <div className="relative aspect-square w-full max-w-[560px]">
-      {/* Outer glow */}
-      <div className="absolute inset-10 rounded-full bg-accent/10 blur-3xl" />
+      {/* Ambient glow */}
+      <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/10 blur-3xl" />
 
-      <svg viewBox="0 0 600 600" className="relative h-full w-full">
+      <motion.svg
+        viewBox={`0 0 ${size} ${size}`}
+        className="relative h-full w-full"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      >
         <defs>
-          <radialGradient id="ring" cx="50%" cy="50%" r="50%">
-            <stop offset="60%" stopColor="rgba(255,255,255,0)" />
-            <stop offset="100%" stopColor="rgba(255,237,105,0.25)" />
+          <radialGradient id="chipGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
+            <stop offset="60%" stopColor={GOLD} stopOpacity="0.08" />
+            <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
-            <stop offset="100%" stopColor="rgba(255,237,105,0.6)" />
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.05" />
+            <stop offset="50%" stopColor={GOLD} stopOpacity="0.55" />
+            <stop offset="100%" stopColor={GOLD} stopOpacity="0.05" />
           </linearGradient>
+          <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.35" />
+            <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
+          </radialGradient>
         </defs>
 
-        {/* Concentric rings */}
-        {[260, 200, 140, 90].map((r, i) => (
-          <motion.circle
-            key={r}
-            cx="300"
-            cy="300"
-            r={r}
-            fill="none"
-            stroke="rgba(255,255,255,0.08)"
-            strokeWidth="1"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: i * 0.1 }}
-          />
-        ))}
+        {/* Faint orbit ring */}
+        <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(223,207,109,0.08)" strokeWidth="1" strokeDasharray="2 6" />
+        <circle cx={center} cy={center} r={radius - 60} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
 
-        {/* Rotating dashed ring */}
-        <motion.circle
-          cx="300" cy="300" r="260"
-          fill="none"
-          stroke="url(#ring)"
-          strokeWidth="1"
-          strokeDasharray="2 8"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "300px 300px" }}
-        />
+        {/* Center chip glow */}
+        <circle cx={center} cy={center} r="150" fill="url(#chipGlow)" />
 
         {/* Connection lines */}
-        {[
-          [300, 40, 300, 560],
-          [40, 300, 560, 300],
-          [88, 88, 512, 512],
-          [512, 88, 88, 512],
-        ].map(([x1, y1, x2, y2], i) => (
+        {positions.map((p, i) => (
           <motion.line
-            key={i}
-            x1={x1} y1={y1} x2={x2} y2={y2}
-            stroke="url(#line)"
-            strokeWidth="0.6"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.5 }}
-            transition={{ duration: 1.2, delay: 0.3 + i * 0.15 }}
+            key={`l-${i}`}
+            x1={center}
+            y1={center}
+            x2={p.x}
+            y2={p.y}
+            stroke="url(#lineGrad)"
+            strokeWidth="1"
+            initial={{ opacity: 0.25 }}
+            animate={{ opacity: [0.2, 0.7, 0.2] }}
+            transition={{ duration: 4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
           />
         ))}
 
-        {/* Nodes on outer ring */}
-        {Array.from({ length: 8 }).map((_, i) => {
-          const angle = (i / 8) * Math.PI * 2;
-          const x = 300 + Math.cos(angle) * 260;
-          const y = 300 + Math.sin(angle) * 260;
+        {/* Floating particles */}
+        {Array.from({ length: 14 }).map((_, i) => {
+          const a = (i / 14) * Math.PI * 2;
+          const r = 90 + ((i * 37) % 110);
+          const x = center + Math.cos(a) * r;
+          const y = center + Math.sin(a) * r;
           return (
-            <motion.g key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 + i * 0.05 }}>
-              <circle cx={x} cy={y} r="6" fill="#0f1115" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
-              <motion.circle
-                cx={x} cy={y} r="3"
-                fill="#ffed69"
-                animate={{ opacity: [0.3, 1, 0.3] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.2 }}
-              />
-            </motion.g>
+            <motion.circle
+              key={`p-${i}`}
+              cx={x}
+              cy={y}
+              r={i % 3 === 0 ? 1.6 : 1}
+              fill={GOLD}
+              animate={{ opacity: [0.15, 0.7, 0.15], y: [0, -4, 0] }}
+              transition={{ duration: 3 + (i % 5), repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+            />
           );
         })}
 
-        {/* Inner hex/diamond */}
+        {/* Module nodes */}
+        {positions.map((p, i) => {
+          const IconCmp = p.icon;
+          return (
+            <g key={p.label}>
+              <circle cx={p.x} cy={p.y} r="38" fill="url(#nodeGlow)" />
+              <motion.g
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 5 + (i % 3), repeat: Infinity, delay: i * 0.3, ease: "easeInOut" }}
+              >
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r="26"
+                  fill="#0f1115"
+                  stroke="rgba(223,207,109,0.45)"
+                  strokeWidth="1"
+                />
+                <foreignObject x={p.x - 12} y={p.y - 12} width="24" height="24">
+                  <div style={{ color: GOLD }}>
+                    <IconCmp className="h-6 w-6" />
+                  </div>
+                </foreignObject>
+              </motion.g>
+              <text
+                x={p.x}
+                y={p.y + 50}
+                textAnchor="middle"
+                fontSize="12"
+                fill="rgba(255,255,255,0.55)"
+                style={{ fontFamily: "Inter, sans-serif", letterSpacing: "0.04em" }}
+              >
+                {p.label}
+              </text>
+            </g>
+          );
+        })}
+
+        {/* AI Chip */}
         <motion.g
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          style={{ transformOrigin: "300px 300px" }}
+          animate={{ scale: [1, 1.04, 1] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          style={{ transformOrigin: `${center}px ${center}px` }}
         >
-          <polygon
-            points="300,230 370,300 300,370 230,300"
-            fill="none"
-            stroke="rgba(255,237,105,0.5)"
+          {/* Chip pins */}
+          {[-30, -10, 10, 30].map((o) => (
+            <g key={o}>
+              <line x1={center + o} y1={center - 60} x2={center + o} y2={center - 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+              <line x1={center + o} y1={center + 60} x2={center + o} y2={center + 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+              <line x1={center - 60} y1={center + o} x2={center - 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+              <line x1={center + 60} y1={center + o} x2={center + 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+            </g>
+          ))}
+          {/* Outer chip */}
+          <rect
+            x={center - 60}
+            y={center - 60}
+            width="120"
+            height="120"
+            rx="18"
+            fill="#0f1115"
+            stroke={GOLD}
+            strokeOpacity="0.7"
+            strokeWidth="1.2"
+          />
+          {/* Inner core */}
+          <rect
+            x={center - 40}
+            y={center - 40}
+            width="80"
+            height="80"
+            rx="12"
+            fill={GOLD}
+            fillOpacity="0.08"
+            stroke={GOLD}
+            strokeOpacity="0.5"
             strokeWidth="1"
           />
-          <polygon
-            points="300,250 350,300 300,350 250,300"
-            fill="rgba(255,237,105,0.08)"
-            stroke="rgba(255,237,105,0.7)"
-            strokeWidth="1"
-          />
+          <text
+            x={center}
+            y={center + 8}
+            textAnchor="middle"
+            fontSize="28"
+            fontWeight="600"
+            fill={GOLD}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "0.04em" }}
+          >
+            AI
+          </text>
         </motion.g>
-
-        {/* Center node */}
-        <motion.circle
-          cx="300" cy="300" r="10"
-          fill="#ffed69"
-          animate={{ scale: [1, 1.15, 1] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          style={{ transformOrigin: "300px 300px" }}
-        />
-        <circle cx="300" cy="300" r="20" fill="none" stroke="rgba(255,237,105,0.3)" strokeWidth="1" />
-
-        {/* Floating small squares */}
-        {[
-          { x: 150, y: 150 },
-          { x: 450, y: 180 },
-          { x: 170, y: 450 },
-          { x: 440, y: 440 },
-        ].map((p, i) => (
-          <motion.rect
-            key={i}
-            x={p.x - 6} y={p.y - 6}
-            width="12" height="12"
-            fill="none"
-            stroke="rgba(255,255,255,0.3)"
-            animate={{ y: [p.y - 6, p.y - 14, p.y - 6] }}
-            transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
-          />
-        ))}
-      </svg>
+      </motion.svg>
     </div>
   );
 }
