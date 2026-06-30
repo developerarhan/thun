@@ -41,9 +41,11 @@ const Icon = {
   ),
   CRM: ({ className = "" }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <circle cx="9" cy="9" r="3" />
-      <circle cx="17" cy="15" r="2.5" />
-      <path d="M3 20c1-3 3.5-4.5 6-4.5M13 20c.4-1.8 1.8-3 3.8-3" />
+      <circle cx="12" cy="8" r="2.6" />
+      <path d="M7 19c.6-2.6 2.6-4 5-4s4.4 1.4 5 4" />
+      <circle cx="5.5" cy="9.5" r="1.8" />
+      <circle cx="18.5" cy="9.5" r="1.8" />
+      <path d="M2.5 17c.4-1.7 1.5-2.7 3-2.7M21.5 17c-.4-1.7-1.5-2.7-3-2.7" />
     </svg>
   ),
   Data: ({ className = "" }) => (
