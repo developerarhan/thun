@@ -209,10 +209,10 @@ export function HeroIllustration() {
           {/* Chip pins */}
           {[-30, -10, 10, 30].map((o) => (
             <g key={o}>
-              <line x1={center + o} y1={center - 60} x2={center + o} y2={center - 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center + o} y1={center + 60} x2={center + o} y2={center + 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center - 60} y1={center + o} x2={center - 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center + 60} y1={center + o} x2={center + 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+              <line x1={center + o} y1={center - 60} x2={center + o} y2={center - 72} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center + o} y1={center + 60} x2={center + o} y2={center + 72} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center - 60} y1={center + o} x2={center - 72} y2={center + o} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center + 60} y1={center + o} x2={center + 72} y2={center + o} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
             </g>
           ))}
           {/* Outer chip */}
