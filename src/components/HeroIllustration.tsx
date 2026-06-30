@@ -105,8 +105,8 @@ export function HeroIllustration() {
       >
         <defs>
           <radialGradient id="chipGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
-            <stop offset="60%" stopColor={GOLD} stopOpacity="0.08" />
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.28" />
+            <stop offset="60%" stopColor={GOLD} stopOpacity="0.05" />
             <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
           </radialGradient>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
