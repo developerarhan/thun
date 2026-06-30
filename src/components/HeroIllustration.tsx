@@ -235,9 +235,9 @@ export function HeroIllustration() {
             height="80"
             rx="12"
             fill={GOLD}
-            fillOpacity="0.08"
+            fillOpacity="0.04"
             stroke={GOLD}
-            strokeOpacity="0.5"
+            strokeOpacity="0.25"
             strokeWidth="1"
           />
           <text
