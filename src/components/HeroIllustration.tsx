@@ -95,7 +95,7 @@ export function HeroIllustration() {
   return (
     <div className="relative aspect-square w-full max-w-[560px]">
       {/* Ambient glow */}
-      <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/10 blur-3xl" />
+      <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/5 blur-[72px]" />
 
       <motion.svg
         viewBox={`0 0 ${size} ${size}`}
