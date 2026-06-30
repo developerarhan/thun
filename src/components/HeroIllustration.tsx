@@ -115,7 +115,7 @@ export function HeroIllustration() {
             <stop offset="100%" stopColor={GOLD} stopOpacity="0.05" />
           </linearGradient>
           <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={GOLD} stopOpacity="0.35" />
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.18" />
             <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
           </radialGradient>
         </defs>
