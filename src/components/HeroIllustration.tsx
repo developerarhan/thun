@@ -156,8 +156,8 @@ export function HeroIllustration() {
               cy={y}
               r={i % 3 === 0 ? 1.6 : 1}
               fill={GOLD}
-              animate={{ opacity: [0.15, 0.7, 0.15], y: [0, -4, 0] }}
-              transition={{ duration: 3 + (i % 5), repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+              animate={{ opacity: [0.08, 0.25, 0.08], y: [0, -3, 0] }}
+              transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.25, ease: "easeInOut" }}
             />
           );
         })}
