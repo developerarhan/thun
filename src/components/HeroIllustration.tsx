@@ -224,8 +224,8 @@ export function HeroIllustration() {
             rx="18"
             fill="#0f1115"
             stroke={GOLD}
-            strokeOpacity="0.7"
-            strokeWidth="1.2"
+            strokeOpacity="0.35"
+            strokeWidth="1"
           />
           {/* Inner core */}
           <rect
