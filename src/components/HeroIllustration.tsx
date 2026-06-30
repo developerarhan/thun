@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { ReactElement } from "react";
 
 /**
  * Premium enterprise AI automation illustration.
