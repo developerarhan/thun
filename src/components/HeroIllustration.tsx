@@ -202,8 +202,8 @@ export function HeroIllustration() {
 
         {/* AI Chip */}
         <motion.g
-          animate={{ scale: [1, 1.04, 1] }}
-          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.015, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           style={{ transformOrigin: `${center}px ${center}px` }}
         >
           {/* Chip pins */}
