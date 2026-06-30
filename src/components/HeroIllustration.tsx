@@ -137,9 +137,9 @@ export function HeroIllustration() {
             y2={p.y}
             stroke="url(#lineGrad)"
             strokeWidth="1"
-            initial={{ opacity: 0.25 }}
-            animate={{ opacity: [0.2, 0.7, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
+            initial={{ opacity: 0.2 }}
+            animate={{ opacity: [0.15, 0.35, 0.15] }}
+            transition={{ duration: 5, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
           />
         ))}
 
