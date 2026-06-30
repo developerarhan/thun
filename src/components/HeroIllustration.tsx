@@ -95,7 +95,7 @@ export function HeroIllustration() {
   return (
     <div className="relative aspect-square w-full max-w-[560px]">
       {/* Ambient glow */}
-      <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/10 blur-3xl" />
+      <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/5 blur-[72px]" />
 
       <motion.svg
         viewBox={`0 0 ${size} ${size}`}
@@ -105,23 +105,23 @@ export function HeroIllustration() {
       >
         <defs>
           <radialGradient id="chipGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
-            <stop offset="60%" stopColor={GOLD} stopOpacity="0.08" />
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.28" />
+            <stop offset="60%" stopColor={GOLD} stopOpacity="0.05" />
             <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
           </radialGradient>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor={GOLD} stopOpacity="0.05" />
-            <stop offset="50%" stopColor={GOLD} stopOpacity="0.55" />
-            <stop offset="100%" stopColor={GOLD} stopOpacity="0.05" />
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.03" />
+            <stop offset="50%" stopColor={GOLD} stopOpacity="0.28" />
+            <stop offset="100%" stopColor={GOLD} stopOpacity="0.03" />
           </linearGradient>
           <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={GOLD} stopOpacity="0.35" />
+            <stop offset="0%" stopColor={GOLD} stopOpacity="0.18" />
             <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
           </radialGradient>
         </defs>
 
         {/* Faint orbit ring */}
-        <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(223,207,109,0.08)" strokeWidth="1" strokeDasharray="2 6" />
+        <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(223,207,109,0.05)" strokeWidth="1" strokeDasharray="2 6" />
         <circle cx={center} cy={center} r={radius - 60} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
 
         {/* Center chip glow */}
@@ -137,9 +137,9 @@ export function HeroIllustration() {
             y2={p.y}
             stroke="url(#lineGrad)"
             strokeWidth="1"
-            initial={{ opacity: 0.25 }}
-            animate={{ opacity: [0.2, 0.7, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
+            initial={{ opacity: 0.2 }}
+            animate={{ opacity: [0.15, 0.35, 0.15] }}
+            transition={{ duration: 5, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
           />
         ))}
 
@@ -156,8 +156,8 @@ export function HeroIllustration() {
               cy={y}
               r={i % 3 === 0 ? 1.6 : 1}
               fill={GOLD}
-              animate={{ opacity: [0.15, 0.7, 0.15], y: [0, -4, 0] }}
-              transition={{ duration: 3 + (i % 5), repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+              animate={{ opacity: [0.08, 0.25, 0.08], y: [0, -3, 0] }}
+              transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.25, ease: "easeInOut" }}
             />
           );
         })}
@@ -177,7 +177,7 @@ export function HeroIllustration() {
                   cy={p.y}
                   r="26"
                   fill="#0f1115"
-                  stroke="rgba(223,207,109,0.45)"
+                  stroke="rgba(223,207,109,0.28)"
                   strokeWidth="1"
                 />
                 <foreignObject x={p.x - 12} y={p.y - 12} width="24" height="24">
@@ -202,17 +202,17 @@ export function HeroIllustration() {
 
         {/* AI Chip */}
         <motion.g
-          animate={{ scale: [1, 1.04, 1] }}
-          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.015, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           style={{ transformOrigin: `${center}px ${center}px` }}
         >
           {/* Chip pins */}
           {[-30, -10, 10, 30].map((o) => (
             <g key={o}>
-              <line x1={center + o} y1={center - 60} x2={center + o} y2={center - 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center + o} y1={center + 60} x2={center + o} y2={center + 72} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center - 60} y1={center + o} x2={center - 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
-              <line x1={center + 60} y1={center + o} x2={center + 72} y2={center + o} stroke={GOLD} strokeOpacity="0.5" strokeWidth="1.2" />
+              <line x1={center + o} y1={center - 60} x2={center + o} y2={center - 72} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center + o} y1={center + 60} x2={center + o} y2={center + 72} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center - 60} y1={center + o} x2={center - 72} y2={center + o} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
+              <line x1={center + 60} y1={center + o} x2={center + 72} y2={center + o} stroke={GOLD} strokeOpacity="0.3" strokeWidth="1" />
             </g>
           ))}
           {/* Outer chip */}
@@ -224,8 +224,8 @@ export function HeroIllustration() {
             rx="18"
             fill="#0f1115"
             stroke={GOLD}
-            strokeOpacity="0.7"
-            strokeWidth="1.2"
+            strokeOpacity="0.35"
+            strokeWidth="1"
           />
           {/* Inner core */}
           <rect
@@ -235,9 +235,9 @@ export function HeroIllustration() {
             height="80"
             rx="12"
             fill={GOLD}
-            fillOpacity="0.08"
+            fillOpacity="0.04"
             stroke={GOLD}
-            strokeOpacity="0.5"
+            strokeOpacity="0.25"
             strokeWidth="1"
           />
           <text
