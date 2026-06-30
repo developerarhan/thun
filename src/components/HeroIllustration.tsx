@@ -177,7 +177,7 @@ export function HeroIllustration() {
                   cy={p.y}
                   r="26"
                   fill="#0f1115"
-                  stroke="rgba(223,207,109,0.45)"
+                  stroke="rgba(223,207,109,0.28)"
                   strokeWidth="1"
                 />
                 <foreignObject x={p.x - 12} y={p.y - 12} width="24" height="24">
