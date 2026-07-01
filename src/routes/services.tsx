@@ -99,7 +99,7 @@ function Services() {
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-2xl border border-border bg-glass p-7 backdrop-blur-xl">
+                  <div className="rounded-2xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-7">
                     <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Use Cases</h3>
                     <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                       {s.useCases.map((u) => (
