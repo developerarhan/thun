@@ -13,7 +13,7 @@ export const stagger: Variants = {
 
 export function Section({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
   return (
-    <section id={id} className={`container-page py-24 md:py-32 ${className}`}>
+    <section id={id} className={`container-page py-16 sm:py-20 md:py-28 lg:py-32 ${className}`}>
       {children}
     </section>
   );
