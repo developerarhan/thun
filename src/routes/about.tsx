@@ -43,11 +43,11 @@ function About() {
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-12 grid gap-10 border-t border-border pt-12 md:grid-cols-2">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              We build AI systems that save time, reduce costs, and help businesses scale faster.<br /><br /><br />
+          <div className="mt-10 grid gap-8 border-t border-border pt-10 sm:mt-12 sm:gap-10 sm:pt-12 md:grid-cols-2">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              We build AI systems that save time, reduce costs, and help businesses scale faster.
             </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               Custom automation designed to eliminate manual work and improve operational efficiency.
             </p>
           </div>
