@@ -106,7 +106,7 @@ function Contact() {
 
           {/* Form */}
           <Reveal delay={0.1}>
-            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl md:p-10">
+            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-8 md:p-10">
               <div className="space-y-6">
                 <Field
                   label="Name" id="name"
