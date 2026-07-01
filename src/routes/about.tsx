@@ -107,7 +107,7 @@ function About() {
               >
                 <div className={`pl-12 md:pl-0 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
                   <div className="font-display text-xs text-accent">{p.step}</div>
-                  <h3 className="mt-2 text-2xl font-medium">{p.title}</h3>
+                  <h3 className="mt-2 text-xl font-medium sm:text-2xl">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 </div>
                 <div className="hidden md:block" />
