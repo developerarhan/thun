@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <span>© 2026 ThunSpark. All Rights Reserved.</span>
-          <span>Built with intent. Designed for scale.</span>
+          <span>Built to save time. Designed to scale.</span>
         </div>
       </div>
     </footer>
