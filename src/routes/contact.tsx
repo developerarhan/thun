@@ -58,7 +58,7 @@ function Contact() {
             Let's design your <span className="text-gradient">automation system.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Book a free 30-minute consultation. We'll map the highest-leverage automation opportunities in your business — no commitment required.
+            Fill out the contact form, and our team will reach out to understand your business, identify your biggest operational challenges, and design a custom AI automation solution that saves time, reduces costs, and helps your business scale faster.
           </p>
         </Reveal>
       </section>
@@ -70,7 +70,7 @@ function Contact() {
             <div className="space-y-8">
               {[
                 { Icon: Mail, label: "Email", value: "hello@thunspark.com", href: "mailto:hello@thunspark.com" },
-                { Icon: MapPin, label: "Working globally", value: "Remote-first · GMT to PST" },
+                { Icon: MapPin, label: " ", value: " " },
               ].map(({ Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
@@ -88,7 +88,7 @@ function Contact() {
               ))}
 
               <div className="border-t border-border pt-8">
-                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Follow</div>
+                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">CONNECT</div>
                 <div className="mt-4 flex gap-3">
                   {[
                     { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
