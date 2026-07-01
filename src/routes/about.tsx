@@ -45,12 +45,10 @@ function About() {
         <Reveal delay={0.1}>
           <div className="mt-12 grid gap-10 border-t border-border pt-12 md:grid-cols-2">
             <p className="text-lg leading-relaxed text-muted-foreground">
-              ThunSpark is an AI Automation Agency helping businesses eliminate repetitive manual work
-              through intelligent workflows and automation systems.
+              We build AI systems that save time, reduce costs, and help businesses scale faster.<br /><br /><br />
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              We design custom automation solutions that improve efficiency, reduce costs,
-              and increase operational scalability — engineered with the same care as world-class software.
+              Custom automation designed to eliminate manual work and improve operational efficiency.
             </p>
           </div>
         </Reveal>
