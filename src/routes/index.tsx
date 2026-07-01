@@ -178,7 +178,7 @@ function Home() {
             <motion.div
               key={ind}
               variants={fadeUp}
-              className="group relative bg-background p-8 transition-colors hover:bg-glass"
+              className="group relative bg-background p-6 sm:p-8 transition-colors hover:bg-glass"
             >
               <div className="font-display text-xs text-muted-foreground">0{i + 1}</div>
               <div className="mt-3 text-xl font-medium">{ind}</div>
