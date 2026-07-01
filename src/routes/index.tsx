@@ -43,24 +43,24 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative pt-12 md:pt-20">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
+      <section className="container-page relative pt-8 sm:pt-12 md:pt-20">
+        <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-[1.1fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
               <SectionLabel>AI Automation Agency</SectionLabel>
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
+              className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="text-gradient">Replace Manual</span>
               <br />Operations With
               <br />AI Powered Systems
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
               We automate your business processes so your team can focus on growing the business instead of repetitive work.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
@@ -74,15 +74,6 @@ function Home() {
               >
                 Explore Services
               </Link>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8">
-              {[["", ""], ["", ""], ["", ""]].map(([n, l]) => (
-                <div key={l}>
-                  <div className="font-display text-2xl font-semibold text-foreground">{n}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">{l}</div>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 
