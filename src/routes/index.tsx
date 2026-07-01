@@ -131,7 +131,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Why ThunSpark</SectionLabel>
-            <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Built To Save Time. <br className="hidden md:block" />
               <span className="text-muted-foreground">Designed To Scale.</span>
             </h2>
