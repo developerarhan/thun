@@ -214,7 +214,7 @@ export function CTASection() {
                 Ready to put your business on autopilot?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Let's design an automation system tailored to your operations. Free 30-minute consultation, no commitment.
+                We'll identify repetitive tasks in your business and show you how AI can automate them to save time and increase productivity.
               </p>
             </div>
             <div className="flex md:justify-end">
