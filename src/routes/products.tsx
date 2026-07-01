@@ -35,7 +35,7 @@ const products = [
     Icon: MessageSquare,
     name: "Customer Communication Hub",
     tagline: "Every conversation, handled.",
-    description: "A unified AI-powered system for customer messaging across channels — fast, consistent, always on.",
+    description: "A unified AI-powered system for customer messaging across channels\u00a0 fast, consistent, always on.",
     features: ["AI Chat Workflows", "Email Automation", "Ticket Routing", "Customer Follow-Ups"],
   },
 ];
@@ -50,7 +50,7 @@ function Products() {
             Automation suites <span className="text-gradient">ready to deploy.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Three flagship systems designed to solve the most expensive operational problems — fully customized to your stack.
+            Three AI automation systems that save time, reduce costs, and help your business scale faster.
           </p>
         </Reveal>
       </section>
