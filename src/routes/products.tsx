@@ -43,19 +43,19 @@ const products = [
 function Products() {
   return (
     <>
-      <section className="container-page pt-12 md:pt-20">
+      <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>Products</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             Automation suites <span className="text-gradient">ready to deploy.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
             Three AI automation systems that save time, reduce costs, and help your business scale faster.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-24">
+      <Section className="!pt-16 sm:!pt-24">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -67,7 +67,7 @@ function Products() {
             <motion.article
               key={p.name}
               variants={fadeUp}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-glass p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 sm:p-8"
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-accent/[0.06] blur-3xl transition-opacity duration-500 group-hover:bg-accent/[0.12]" />
 
@@ -79,7 +79,7 @@ function Products() {
                   <span className="font-display text-xs text-muted-foreground">PRODUCT 0{i + 1}</span>
                 </div>
 
-                <h2 className="mt-10 text-2xl font-semibold leading-tight">{p.name}</h2>
+                <h2 className="mt-8 text-2xl font-semibold leading-tight sm:mt-10">{p.name}</h2>
                 <p className="mt-2 text-sm text-accent">{p.tagline}</p>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
 

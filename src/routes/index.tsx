@@ -43,24 +43,24 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative pt-12 md:pt-20">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
+      <section className="container-page relative pt-8 sm:pt-12 md:pt-20">
+        <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-[1.1fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
               <SectionLabel>AI Automation Agency</SectionLabel>
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
+              className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="text-gradient">Replace Manual</span>
               <br />Operations With
               <br />AI Powered Systems
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
               We automate your business processes so your team can focus on growing the business instead of repetitive work.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
@@ -74,15 +74,6 @@ function Home() {
               >
                 Explore Services
               </Link>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8">
-              {[["", ""], ["", ""], ["", ""]].map(([n, l]) => (
-                <div key={l}>
-                  <div className="font-display text-2xl font-semibold text-foreground">{n}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">{l}</div>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -102,7 +93,7 @@ function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <SectionLabel>What we do</SectionLabel>
-            <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Six automation capabilities. <span className="text-muted-foreground">One unified system.</span>
             </h2>
           </Reveal>
@@ -140,7 +131,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Why ThunSpark</SectionLabel>
-            <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Built To Save Time. <br className="hidden md:block" />
               <span className="text-muted-foreground">Designed To Scale.</span>
             </h2>
@@ -172,7 +163,7 @@ function Home() {
       <Section>
         <Reveal>
           <SectionLabel>Industries</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             Trusted across teams that move fast.
           </h2>
         </Reveal>
@@ -187,7 +178,7 @@ function Home() {
             <motion.div
               key={ind}
               variants={fadeUp}
-              className="group relative bg-background p-8 transition-colors hover:bg-glass"
+              className="group relative bg-background p-6 sm:p-8 transition-colors hover:bg-glass"
             >
               <div className="font-display text-xs text-muted-foreground">0{i + 1}</div>
               <div className="mt-3 text-xl font-medium">{ind}</div>
@@ -206,11 +197,12 @@ export function CTASection() {
   return (
     <Section>
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-glass p-12 backdrop-blur-xl md:p-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl sm:p-12 md:p-20">
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+              <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+
                 Ready to put your business on autopilot?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">

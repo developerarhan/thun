@@ -35,19 +35,19 @@ const process = [
 function About() {
   return (
     <>
-      <section className="container-page pt-12 md:pt-20">
+      <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             We Build Systems That <span className="text-gradient">Work While You Sleep</span>
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-12 grid gap-10 border-t border-border pt-12 md:grid-cols-2">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              We build AI systems that save time, reduce costs, and help businesses scale faster.<br /><br /><br />
+          <div className="mt-10 grid gap-8 border-t border-border pt-10 sm:mt-12 sm:gap-10 sm:pt-12 md:grid-cols-2">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              We build AI systems that save time, reduce costs, and help businesses scale faster.
             </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               Custom automation designed to eliminate manual work and improve operational efficiency.
             </p>
           </div>
@@ -58,7 +58,8 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Values</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+
             Principles that shape every system we ship.
           </h2>
         </Reveal>
@@ -85,7 +86,7 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Process</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             A clear path from chaos to compounding leverage.
           </h2>
         </Reveal>
@@ -106,7 +107,7 @@ function About() {
               >
                 <div className={`pl-12 md:pl-0 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
                   <div className="font-display text-xs text-accent">{p.step}</div>
-                  <h3 className="mt-2 text-2xl font-medium">{p.title}</h3>
+                  <h3 className="mt-2 text-xl font-medium sm:text-2xl">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 </div>
                 <div className="hidden md:block" />

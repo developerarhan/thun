@@ -51,20 +51,20 @@ function Contact() {
 
   return (
     <>
-      <section className="container-page pt-12 md:pt-20">
+      <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             Let's design your <span className="text-gradient">automation system.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
             Fill out the contact form, and our team will reach out to understand your business, identify your biggest operational challenges, and design a custom AI automation solution that saves time, reduces costs, and helps your business scale faster.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-24">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+      <Section className="!pt-16 sm:!pt-24">
+        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1fr_1.2fr]">
           {/* Info */}
           <Reveal>
             <div className="space-y-8">
@@ -106,7 +106,7 @@ function Contact() {
 
           {/* Form */}
           <Reveal delay={0.1}>
-            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl md:p-10">
+            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-8 md:p-10">
               <div className="space-y-6">
                 <Field
                   label="Name" id="name"
