@@ -58,8 +58,7 @@ function Home() {
               <br />AI Powered Systems
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              ThunSpark helps businesses automate operations, lead generation, marketing workflows,
-              customer communication, and internal processes through intelligent automation systems.
+              We automate your business processes so your team can focus on growing the business instead of repetitive work.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -78,7 +77,7 @@ function Home() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8">
-              {[["50+", "Workflows shipped"], ["10k+", "Hours saved"], ["24/7", "Always-on systems"]].map(([n, l]) => (
+              {[["AI Workflows", ""], ["Integrations", ""], ["Response Time", ""]].map(([n, l]) => (
                 <div key={l}>
                   <div className="font-display text-2xl font-semibold text-foreground">{n}</div>
                   <div className="mt-1 text-xs text-muted-foreground">{l}</div>
