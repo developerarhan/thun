@@ -197,11 +197,12 @@ export function CTASection() {
   return (
     <Section>
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-glass p-12 backdrop-blur-xl md:p-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl sm:p-12 md:p-20">
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+              <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+
                 Ready to put your business on autopilot?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
