@@ -93,7 +93,7 @@ function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <SectionLabel>What we do</SectionLabel>
-            <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Six automation capabilities. <span className="text-muted-foreground">One unified system.</span>
             </h2>
           </Reveal>
