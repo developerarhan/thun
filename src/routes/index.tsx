@@ -53,9 +53,9 @@ function Home() {
               variants={fadeUp}
               className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
             >
-              <span className="text-gradient">AI Automation</span>
-              <br />That Eliminates
-              <br />Repetitive Work
+              <span className="text-gradient">Replace Manual</span>
+              <br />Operations With
+              <br />AI Powered Systems
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
               ThunSpark helps businesses automate operations, lead generation, marketing workflows,
