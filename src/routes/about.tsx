@@ -35,10 +35,10 @@ const process = [
 function About() {
   return (
     <>
-      <section className="container-page pt-12 md:pt-20">
+      <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             We Build Systems That <span className="text-gradient">Work While You Sleep</span>
           </h1>
         </Reveal>
