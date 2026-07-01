@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, MapPin, Send, Check, AlertCircle } from "lucide-react";
+import { Mail, Send, Check, AlertCircle } from "lucide-react";
 import { LinkedInIcon, InstagramIcon } from "../components/BrandIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
@@ -68,24 +68,17 @@ function Contact() {
           {/* Info */}
           <Reveal>
             <div className="space-y-8">
-              {[
-                { Icon: Mail, label: "Email", value: "hello@thunspark.com", href: "mailto:hello@thunspark.com" },
-                { Icon: MapPin, label: " ", value: " " },
-              ].map(({ Icon, label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</div>
-                    {href ? (
-                      <a href={href} className="mt-1 block text-base text-foreground hover:text-accent">{value}</a>
-                    ) : (
-                      <div className="mt-1 text-base">{value}</div>
-                    )}
-                  </div>
+              <div className="flex items-start gap-4">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <div>
+                  <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</div>
+                  <a href="mailto:hello@thunspark.com" className="mt-1 block text-base text-foreground hover:text-accent">
+                    hello@thunspark.com
+                  </a>
                 </div>
-              ))}
+              </div>
 
               <div className="border-t border-border pt-8">
                 <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">CONNECT</div>
