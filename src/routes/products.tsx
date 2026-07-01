@@ -43,19 +43,19 @@ const products = [
 function Products() {
   return (
     <>
-      <section className="container-page pt-12 md:pt-20">
+      <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>Products</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             Automation suites <span className="text-gradient">ready to deploy.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
             Three AI automation systems that save time, reduce costs, and help your business scale faster.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-24">
+      <Section className="!pt-16 sm:!pt-24">
         <motion.div
           variants={stagger}
           initial="hidden"
