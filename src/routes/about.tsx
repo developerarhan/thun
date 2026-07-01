@@ -86,7 +86,7 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Process</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             A clear path from chaos to compounding leverage.
           </h2>
         </Reveal>
