@@ -71,8 +71,8 @@ function Services() {
         </Reveal>
       </section>
 
-      <Section className="!pt-24">
-        <div className="space-y-32">
+      <Section className="!pt-16 sm:!pt-24">
+        <div className="space-y-20 sm:space-y-28 lg:space-y-32">
           {services.map((s, i) => (
             <Reveal key={s.title}>
               <div className={`grid items-center gap-12 lg:grid-cols-2 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
