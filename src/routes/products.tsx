@@ -67,7 +67,7 @@ function Products() {
             <motion.article
               key={p.name}
               variants={fadeUp}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-glass p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-glass p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 sm:p-8"
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-accent/[0.06] blur-3xl transition-opacity duration-500 group-hover:bg-accent/[0.12]" />
 
