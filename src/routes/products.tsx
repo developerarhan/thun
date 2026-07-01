@@ -79,7 +79,7 @@ function Products() {
                   <span className="font-display text-xs text-muted-foreground">PRODUCT 0{i + 1}</span>
                 </div>
 
-                <h2 className="mt-10 text-2xl font-semibold leading-tight">{p.name}</h2>
+                <h2 className="mt-8 text-2xl font-semibold leading-tight sm:mt-10">{p.name}</h2>
                 <p className="mt-2 text-sm text-accent">{p.tagline}</p>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
 
