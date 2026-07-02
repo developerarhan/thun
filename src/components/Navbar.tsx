@@ -33,7 +33,7 @@ export function Navbar() {
       <nav className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
           <img
-            src={logoAsset.url}
+            src="/thunspark-logo.png"
             alt="ThunSpark"
             className="h-9 w-9 object-contain transition-transform group-hover:scale-110"
           />

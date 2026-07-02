@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <img src={logoAsset.url} alt="ThunSpark" className="h-9 w-9 object-contain" />
+              <img src="/thunspark-logo.png" alt="ThunSpark" className="h-9 w-9 object-contain" />
               <span className="font-display text-lg font-semibold">ThunSpark</span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
