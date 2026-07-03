@@ -4,9 +4,9 @@ import logoAsset from "../assets/thunspark-logo.png.asset.json";
 import { LinkedInIcon, InstagramIcon } from "./BrandIcons";
 
 const socials = [
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: LinkedInIcon },
-  { href: "https://instagram.com", label: "Instagram", Icon: InstagramIcon },
-  { href: "mailto:hello@thunspark.com", label: "Email", Icon: Mail },
+  { href: "https://www.linkedin.com/company/thunspark", label: "LinkedIn", Icon: LinkedInIcon },
+  { href: "https://www.instagram.com/thunspark", label: "Instagram", Icon: InstagramIcon },
+  { href: "mailto:thunderdigitalmarketinginc@gmail.com", label: "Email", Icon: Mail },
 ];
 
 export function Footer() {

@@ -102,7 +102,7 @@ function Contact() {
                   {[
                     { href: "https://www.linkedin.com/company/thunspark", Icon: LinkedInIcon, label: "LinkedIn" },
                     { href: "https://www.instagram.com/thunspark", Icon: InstagramIcon, label: "Instagram" },
-                    { href: "mailto:hello@thunspark.com", Icon: Mail, label: "Email" },
+                    { href: "mailto:thunderdigitalmarketinginc@gmail.com", Icon: Mail, label: "Email" },
                   ].map(({ href, Icon, label }) => (
                     <a
                       key={label}
