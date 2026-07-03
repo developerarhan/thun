@@ -90,8 +90,8 @@ function Contact() {
                 </span>
                 <div>
                   <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</div>
-                  <a href="mailto:hello@thunspark.com" className="mt-1 block text-base text-foreground hover:text-accent">
-                    hello@thunspark.com
+                  <a href="mailto:hello@thunspark.agency" className="mt-1 block text-base text-foreground hover:text-accent">
+                    hello@thunspark.agency
                   </a>
                 </div>
               </div>
@@ -102,7 +102,7 @@ function Contact() {
                   {[
                     { href: "https://www.linkedin.com/company/thunspark", Icon: LinkedInIcon, label: "LinkedIn" },
                     { href: "https://www.instagram.com/thunspark", Icon: InstagramIcon, label: "Instagram" },
-                    { href: "mailto:thunderdigitalmarketinginc@gmail.com", Icon: Mail, label: "Email" },
+                    { href: "mailto:hello@thunspark.agency", Icon: Mail, label: "Email" },
                   ].map(({ href, Icon, label }) => (
                     <a
                       key={label}

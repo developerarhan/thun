@@ -6,7 +6,7 @@ import { LinkedInIcon, InstagramIcon } from "./BrandIcons";
 const socials = [
   { href: "https://www.linkedin.com/company/thunspark", label: "LinkedIn", Icon: LinkedInIcon },
   { href: "https://www.instagram.com/thunspark", label: "Instagram", Icon: InstagramIcon },
-  { href: "mailto:thunderdigitalmarketinginc@gmail.com", label: "Email", Icon: Mail },
+  { href: "mailto:hello@thunspark.agency", label: "Email", Icon: Mail },
 ];
 
 export function Footer() {
