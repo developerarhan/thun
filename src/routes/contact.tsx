@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Mail, Send, Check, AlertCircle } from "lucide-react";
 import { LinkedInIcon, InstagramIcon } from "../components/BrandIcons";
@@ -41,10 +42,25 @@ function Contact() {
     if (!validate()) return;
     setState("submitting");
     try {
-      await new Promise((r) => setTimeout(r, 900));
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message, 
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       setState("success");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error){
+      console.error(error);
       setState("error");
     }
   }
@@ -84,8 +100,8 @@ function Contact() {
                 <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">CONNECT</div>
                 <div className="mt-4 flex gap-3">
                   {[
-                    { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
-                    { href: "https://instagram.com", Icon: InstagramIcon, label: "Instagram" },
+                    { href: "https://www.linkedin.com/company/thunspark", Icon: LinkedInIcon, label: "LinkedIn" },
+                    { href: "https://www.instagram.com/thunspark", Icon: InstagramIcon, label: "Instagram" },
                     { href: "mailto:hello@thunspark.com", Icon: Mail, label: "Email" },
                   ].map(({ href, Icon, label }) => (
                     <a
