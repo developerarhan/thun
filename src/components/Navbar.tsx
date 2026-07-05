@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "../assets/thunspark-logo.png.asset.json";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -36,6 +35,9 @@ export function Navbar() {
             src="/thunspark-logo.png"
             alt="ThunSpark"
             className="h-9 w-9 object-contain transition-transform group-hover:scale-110"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <span className="font-display text-lg font-semibold tracking-tight">ThunSpark</span>
         </Link>
@@ -63,6 +65,8 @@ export function Navbar() {
           </Link>
           <button
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-nav-menu"
             onClick={() => setOpen((v) => !v)}
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass md:hidden"
           >

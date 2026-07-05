@@ -3,16 +3,43 @@ import { ArrowUpRight, Users, Target, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { Section, SectionLabel, Reveal, fadeUp, stagger } from "../components/ui-primitives";
 import { CTASection } from "./index";
+import { seo, breadcrumbSchema, jsonLd, SITE_NAME } from "../lib/seo";
+
+const productSummaries = [
+  { name: "Recruitment Automation Suite", description: "An end-to-end recruitment system that automates the high-volume work and lets your team focus on talent." },
+  { name: "Lead Generation Engine", description: "A self-running prospecting machine that continuously discovers, qualifies, and engages your ideal customers." },
+  { name: "Customer Communication Hub", description: "A unified AI-powered system for customer messaging across channels — fast, consistent, always on." },
+];
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Products — ThunSpark" },
-      { name: "description", content: "Pre-built AI automation suites for recruitment, lead generation, and customer communication." },
-      { property: "og:title", content: "Products — ThunSpark" },
-      { property: "og:description", content: "Production-ready automation suites." },
-    ],
-  }),
+  head: () => {
+    const base = seo({
+      title: "Products",
+      description:
+        "Pre-built AI automation suites for recruitment, lead generation, and customer communication.",
+      path: "/products",
+    });
+    return {
+      ...base,
+      scripts: [
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/products" },
+        ]),
+        jsonLd({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: productSummaries.map((p, index) => ({
+            "@type": "Product",
+            position: index + 1,
+            name: p.name,
+            description: p.description,
+            brand: { "@type": "Organization", name: SITE_NAME },
+          })),
+        }),
+      ],
+    };
+  },
   component: Products,
 });
 

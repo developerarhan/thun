@@ -3,16 +3,26 @@ import { Lightbulb, Gauge, Minimize2, ShieldCheck, TrendingUp } from "lucide-rea
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
 import { motion } from "framer-motion";
 import { CTASection } from "./index";
+import { seo, breadcrumbSchema } from "../lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — ThunSpark" },
-      { name: "description", content: "ThunSpark is an AI automation agency building systems that work while you sleep — improving efficiency, reducing cost, and scaling operations." },
-      { property: "og:title", content: "About — ThunSpark" },
-      { property: "og:description", content: "Systems that work while you sleep." },
-    ],
-  }),
+  head: () => {
+    const base = seo({
+      title: "About",
+      description:
+        "ThunSpark is an AI automation agency building systems that work while you sleep — improving efficiency, reducing cost, and scaling operations.",
+      path: "/about",
+    });
+    return {
+      ...base,
+      scripts: [
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]),
+      ],
+    };
+  },
   component: About,
 });
 

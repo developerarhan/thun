@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Hard-pin the Nitro output target to Vercel. The config package auto-detects
+  // the deploy platform by default, but this project deploys exclusively to
+  // Vercel, so we pin it explicitly rather than relying on env-based detection.
+  nitro: {
+    preset: "vercel",
+  },
 });

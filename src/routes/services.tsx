@@ -4,16 +4,45 @@ import {
 } from "lucide-react";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
 import { CTASection } from "./index";
+import { seo, breadcrumbSchema, jsonLd, SITE_NAME } from "../lib/seo";
+
+const serviceNames = [
+  "AI Workflow Automation",
+  "Lead Generation Automation",
+  "CRM Automation",
+  "Email Automation",
+  "Recruitment Automation",
+  "Business Process Automation",
+];
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — ThunSpark" },
-      { name: "description", content: "AI workflow, lead gen, CRM, email, recruitment, and business process automation — engineered for scale." },
-      { property: "og:title", content: "Services — ThunSpark" },
-      { property: "og:description", content: "Six automation capabilities, one unified system." },
-    ],
-  }),
+  head: () => {
+    const base = seo({
+      title: "Services",
+      description:
+        "AI workflow, lead gen, CRM, email, recruitment, and business process automation — engineered for scale.",
+      path: "/services",
+    });
+    return {
+      ...base,
+      scripts: [
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]),
+        jsonLd({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: serviceNames.map((name, index) => ({
+            "@type": "Service",
+            position: index + 1,
+            name,
+            provider: { "@type": "Organization", name: SITE_NAME },
+          })),
+        }),
+      ],
+    };
+  },
   component: Services,
 });
 

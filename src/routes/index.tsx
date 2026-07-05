@@ -6,16 +6,19 @@ import {
 } from "lucide-react";
 import { HeroIllustration } from "../components/HeroIllustration";
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
+import { seo } from "../lib/seo";
+
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "ThunSpark — AI Automation Agency" },
-      { name: "description", content: "AI automation that eliminates repetitive work. ThunSpark builds intelligent systems for operations, lead gen, marketing, and customer communication." },
-      { property: "og:title", content: "ThunSpark — AI Automation Agency" },
-      { property: "og:description", content: "AI automation that eliminates repetitive work." },
-    ],
-  }),
+  head: () => {
+    const base = seo({
+      title: "ThunSpark — AI Automation Agency",
+      description:
+        "AI automation that eliminates repetitive work. ThunSpark builds intelligent systems for operations, lead gen, marketing, and customer communication.",
+      path: "/",
+    });
+    return base;
+  },
   component: Home,
 });
 

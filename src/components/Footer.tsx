@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
-import logoAsset from "../assets/thunspark-logo.png.asset.json";
 import { LinkedInIcon, InstagramIcon } from "./BrandIcons";
 
 const socials = [
@@ -16,7 +15,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <img src="/thunspark-logo.png" alt="ThunSpark" className="h-9 w-9 object-contain" />
+              <img 
+                src="/thunspark-logo.png" 
+                alt="ThunSpark" 
+                className="h-9 w-9 object-contain" 
+                loading="lazy"
+                decoding="async"
+              />
               <span className="font-display text-lg font-semibold">ThunSpark</span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -55,7 +60,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
               ))}
             </div>

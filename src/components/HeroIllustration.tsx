@@ -93,7 +93,7 @@ export function HeroIllustration() {
   });
 
   return (
-    <div className="relative aspect-square w-full max-w-[560px]">
+    <div className="relative aspect-square w-full max-w-[560px]" aria-hidden="true">
       {/* Ambient glow */}
       <div className="absolute inset-16 rounded-full bg-[#DFCF6D]/5 blur-[72px]" />
 

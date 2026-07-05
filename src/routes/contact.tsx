@@ -5,16 +5,32 @@ import { Mail, Send, Check, AlertCircle } from "lucide-react";
 import { LinkedInIcon, InstagramIcon } from "../components/BrandIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
+import { seo, breadcrumbSchema, jsonLd } from "../lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — ThunSpark" },
-      { name: "description", content: "Book a free consultation with ThunSpark. Let's design the automation system that transforms your operations." },
-      { property: "og:title", content: "Contact — ThunSpark" },
-      { property: "og:description", content: "Let's design your automation system." },
-    ],
-  }),
+  head: () => {
+    const base = seo({
+      title: "Contact",
+      description:
+        "Book a free consultation with ThunSpark. Let's design the automation system that transforms your operations.",
+      path: "/contact",
+    });
+    return {
+      ...base,
+      scripts: [
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]),
+        jsonLd({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact ThunSpark",
+          url: "https://www.thunspark.agency/contact",
+        }),
+      ],
+    };
+  },
   component: Contact,
 });
 
@@ -85,7 +101,8 @@ function Contact() {
           <Reveal>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent"
+                aria-hidden="true">
                   <Mail className="h-5 w-5" />
                 </span>
                 <div>
@@ -112,7 +129,7 @@ function Contact() {
                       rel="noreferrer"
                       className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
                     >
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-4 w-4" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
@@ -136,6 +153,9 @@ function Contact() {
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="Your full name"
                       className={inputCls}
+                      autoComplete="name"
+                      aria-invalid={Boolean(errors.name)}
+                      aria-describedby={errors.name ? "name-error" : undefined}
                     />
                   }
                 />
@@ -151,6 +171,9 @@ function Contact() {
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       placeholder="you@company.com"
                       className={inputCls}
+                      autoComplete="email"
+                      aria-invalid={Boolean(errors.email)}
+                      aria-describedby={errors.email ? "email-error" : undefined}
                     />
                   }
                 />
@@ -166,6 +189,8 @@ function Contact() {
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                       placeholder="Tell us about your operations and what you'd like to automate…"
                       className={`${inputCls} resize-none`}
+                      aria-invalid={Boolean(errors.message)}
+                      aria-describedby={errors.message ? "message-error" : undefined}
                     />
                   }
                 />
@@ -185,9 +210,11 @@ function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
+                      role="status"
+                      aria-live="polite"
                       className="flex items-center gap-2 rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-foreground"
                     >
-                      <Check className="h-4 w-4 text-accent" />
+                      <Check className="h-4 w-4 text-accent" aria-hidden="true" />
                       Message sent. We'll be in touch within 24 hours.
                     </motion.div>
                   )}
@@ -196,6 +223,8 @@ function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
+                      role="alert"
+                      aria-live="assertive"
                       className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm"
                     >
                       <AlertCircle className="h-4 w-4 text-red-400" />
